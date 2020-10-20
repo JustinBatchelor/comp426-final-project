@@ -1,12 +1,12 @@
 
 
-auth.onAuthStateChanged(user => {
-    if (user) {
-        //for logged in user
-    } else {
-        //for logged out user
-    }
-})
+// auth.onAuthStateChanged(user => {
+//     if (user) {
+//         //for logged in user
+//     } else {
+//         //for logged out user
+//     }
+// })
 
 const signupForm = document.querySelector('#signup-form');
 const signupButton = document.querySelector('#signup-button');
@@ -21,9 +21,8 @@ signupButton.addEventListener('click', (event) => {
     const password = signupForm['signup-password'].value;
 
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        return db.collection('users').doc(cred.user.uid).set({
+        db.collection("users").doc(cred.user.uid).set({
             name: signupForm['signup-name'].value});
-    }).then(() => {
         const modal = document.querySelector('#modal-signup');
         M.Modal.getInstance(modal).close();
         signupForm.reset();
