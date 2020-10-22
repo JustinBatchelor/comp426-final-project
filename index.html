@@ -10,80 +10,85 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#" id="home">UNC CS Profs Ranked</a>
+            <li class="logged-in">
+                <a href="#" id="write-review" class="grey-text modal-trigger">New Review</a>
+            </li>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="logged-in">
-                        <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-account" id="account">Account</a>
                     </li>
                     <li class="logged-in">
                         <a href="#" class="grey-text" id="logout">Logout</a>
                     </li>
                     <li class="logged-out">
-                        <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-login" id="login">Login</a>
                     </li>
                     <li class="logged-out">
-                        <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-signup" id="signup">Sign up</a>
                     </li>
                 </ul>
             </div>
         </nav>
-
-        <div id="modal-signup" class="modal" style="max-height: 50%">
-            <div class="modal-content">
-                <h4>Sign up</h4><br />
-                <form id="signup-form">
-                    <div class="input-field">
-                        <input type="text" id="signup-name" required />
-                        <label for="signup-name">Name</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="email" id="signup-email" required />
-                        <label for="signup-email">Email address</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" id="signup-password" required />
-                        <label for="signup-password">Choose password</label>
-                    </div>
-                    <button class="btn btn-light" id="signup-button">Sign up</button>
-                </form>
-            </div>
-        </div>
-
-        <div id="modal-login" class="modal" style="max-height: 50%">
-            <div class="modal-content">
-                <h4>Login</h4><br />
-                <form id="login-form">
-                    <div class="input-field">
-                        <input type="email" id="login-email" required />
-                        <label for="login-email">Email address</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" id="login-password" required />
-                        <label for="login-password">Your password</label>
-                    </div>
-                    <button class="btn btn-light" id="login-button">Login</button>
-                </form>
-            </div>
-        </div>
-
-        <div id="modal-account" class="modal">
-            <div class="modal-content center-align">
-                <h4>Account details</h4><br />
-                <div class="account-details"></div>
-            </div>
-        </div>
-
-        <div class="card bg-light mb-3" style="margin-top: 20px; width: 50%; padding: 100px; margin-left: 25%; margin-right: 25%">
-            <div class="card-body">
-                <h5 class="card-title">Find a Professor...</h5>
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <div id="modal-signup" class="modal" style="max-height: 50%">
+                <div class="modal-content">
+                    <h4>Sign up</h4><br />
+                    <form id="signup-form">
+                        <div class="input-field">
+                            <input type="text" id="signup-name" required />
+                            <label for="signup-name">Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" id="signup-email" required />
+                            <label for="signup-email">Email address</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" id="signup-password" required />
+                            <label for="signup-password">Choose password</label>
+                        </div>
+                        <button class="btn btn-light" id="signup-button">Sign up</button>
                     </form>
+                </div>
+            </div>
+
+            <div id="modal-login" class="modal" style="max-height: 50%">
+                <div class="modal-content">
+                    <h4>Login</h4><br />
+                    <form id="login-form">
+                        <div class="input-field">
+                            <input type="email" id="login-email" required />
+                            <label for="login-email">Email address</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" id="login-password" required />
+                            <label for="login-password">Your password</label>
+                        </div>
+                        <button class="btn btn-light" id="login-button">Login</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="modal-account" class="modal">
+                <div class="modal-content center-align">
+                    <h4>Account details</h4><br />
+                    <div class="account-details"></div>
+                </div>
+            </div>
+        <div id="root">
+            <div class="card bg-light mb-3" style="margin-top: 50px; width: 50%; padding: 100px; margin-left: 25%; margin-right: 25%">
+                <div class="card-body">
+                    <h5 class="card-title">Find a Professor...</h5>
+                    <form class="form-inline" id="search-form" autocomplete="off" action="/action_page.php">
+                        <div class="autocomplete" style="width:300px;">
+                            <input class="form-control mr-sm-2" id="myInput" type="text" name="myInput" placeholder="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit-search">Search</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 

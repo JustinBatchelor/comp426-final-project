@@ -25,10 +25,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70653789-6c00-406f-b9b5-1e54103f3f3e" name="Default Changelist" comment="commiting">
+    <list default="true" id="70653789-6c00-406f-b9b5-1e54103f3f3e" name="Default Changelist" comment="Pushing changes from laptop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,7 @@
       <updated>1603052797654</updated>
       <workItem from="1603052798795" duration="12085000" />
       <workItem from="1603173921261" duration="63000" />
-      <workItem from="1603212213062" duration="2377000" />
+      <workItem from="1603212213062" duration="9934000" />
     </task>
     <task id="LOCAL-00001" summary="commiting">
       <created>1603173835242</created>
@@ -86,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603173835242</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Pushing changes from laptop">
+      <created>1603234632361</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603234632361</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,12 +126,28 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commiting" />
-    <option name="LAST_COMMIT_MESSAGE" value="commiting" />
+    <MESSAGE value="Pushing changes from laptop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pushing changes from laptop" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="337" y="166" key="Vcs.Push.Dialog.v2" timestamp="1603173838002">
+    <state x="337" y="166" key="Vcs.Push.Dialog.v2" timestamp="1603402852989">
       <screen x="0" y="23" width="1440" height="804" />
     </state>
-    <state x="337" y="166" key="Vcs.Push.Dialog.v2/0.23.1440.804@0.23.1440.804" timestamp="1603173838002" />
+    <state x="337" y="166" key="Vcs.Push.Dialog.v2/0.23.1440.804@0.23.1440.804" timestamp="1603402852989" />
+    <state x="385" y="151" width="670" height="676" key="search.everywhere.popup" timestamp="1603321848855">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state x="385" y="151" width="670" height="676" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1603321848855" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/auth.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
