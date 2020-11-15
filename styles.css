@@ -17,7 +17,7 @@ input[type=text] {
     width: 100%;
 }
 input[type=submit] {
-    background-color: DodgerBlue;
+    background-color: #1e90ff;
     color: #fff;
 }
 .autocomplete-items {
@@ -43,4 +43,11 @@ input[type=submit] {
     background-color: DodgerBlue !important;
     color: #ffffff;
 }
+
+.btn-danger {
+    background-color: crimson;
+}
+
+
+
 
