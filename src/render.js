@@ -2,9 +2,6 @@ function renderNewReview() {
     return `
     <div class="jumbotron" style="margin: 5%">
         <form>
-            <label for="inputName">Name</label>
-            <input type="text" class="form-control" id="inputName" placeholder="Enter Name" required>  
-            
             <label for="course">Course</label>
             <input type="text" class="form-control" id="course" placeholder="Enter Course" required>  
             
@@ -72,7 +69,7 @@ function renderProfessorCard(prof) {
 
 
 //uid is the current user id
-function renderReview(review, uid) {
+function renderReview(review, uid, edit_counter, delete_counter) {
     let html;
     if (uid === review.uid) {
         //allow edits
@@ -84,9 +81,9 @@ function renderReview(review, uid) {
                 <p class="card-title">Rating: <span>${review.rating}</span> / 5</p>
                 <p class="card-title">Description: <span>${review.description}</span></p>
             </div>
-            <div class="container"> 
-                <button type="button" class="btn btn-secondary edit-button">Edit</button>
-                <button type="button" class="btn btn-danger delete-button">Delete</button>
+            <div class="container button-row"> 
+                <button type="button" class="btn btn-secondary edit-button" id="${edit_counter}">Edit</button>
+                <button type="button" class="btn btn-danger delete-button" id="${delete_counter}">Delete</button>
             </div>
         </div>
     `
@@ -105,4 +102,21 @@ function renderReview(review, uid) {
     }
 
     $root.append(html);
+}
+
+function renderAccountInfo(doc) {
+    let account = modal[2];
+    let html = `
+    <div class="jumbotron account-info" style="background: transparent">
+        <p>Name: <span>${doc.data().name}</span></p>
+        <p>Reviews: <span>${doc.data().reviews}</span></p>
+    </div>
+    `
+    account.innerHTML += html;
+}
+
+function renderEditBox() {
+    let html = `
+    <div class="">
+    `
 }

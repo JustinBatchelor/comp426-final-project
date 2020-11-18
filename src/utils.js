@@ -15,10 +15,11 @@ const account_button = document.querySelector("#account");
 const signup_button = document.querySelector("#signup");
 const newReviewButton = document.querySelector('#write-review');
 const homeButton = document.querySelector('#home');
+
 const $root = $('#root');
 let submit_button;
 let searchForm;
-
+let failedLogin = false;
 
 function goToHomePage() {
     $root.empty();
@@ -118,3 +119,4 @@ function updateSubmitButton(){
 
     }));
 }
+

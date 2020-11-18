@@ -1,3 +1,4 @@
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 let firebaseConfig = {
@@ -19,23 +20,11 @@ let faculty_list = [];
 let faculty_map = new Map();
 let users_list = [];
 let users_map = new Map();
+// let id_to_user = [];
+// let id_to_user_map = new Map();
 
-
-db.collection('faculty').get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-        faculty_list.push(doc.data().name);
-        faculty_map.set(doc.data().name, doc.id);
-    });
-})
-
-
-db.collection('users').get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-        users_list.push(doc.data().name);
-        users_map.set(doc.data().name, doc.id);
-    });
-})
-
+updateFacultyList();
+updateUsersList();
 
 function getFacultyReference() {
     return db.collection("faculty").get();
@@ -56,12 +45,34 @@ function displayProfessorCard(prof_uid){
 }
 
 function displayProfessorReviews(prof_uid, poster_id) {
+    let edit_counter = 1;
+    let delete_counter = -1;
     db.collection("faculty").doc(prof_uid).collection("reviews").get().then(reviews => {
-
         reviews.forEach(review => {
-            renderReview(review.data(), poster_id);
+            renderReview(review.data(), poster_id, edit_counter, delete_counter);
+            let edit_button = document.querySelector("[id=" + CSS.escape(edit_counter.toString()) +"]");
+            let delete_button = document.querySelector("[id=" + CSS.escape(delete_counter.toString()) +"]");
+            edit_button.addEventListener('click', (event) => {
+                event.preventDefault();
+            })
+            delete_button.addEventListener('click', (event) => {
+                event.preventDefault();
+                let document_reference = review.id;
+                db.collection("faculty").doc(prof_uid).collection("reviews").doc(document_reference).delete().then(function(){
+                    displayProfessorCard(prof_uid);
+                    displayProfessorReviews(prof_uid, poster_id);
+                    let user_reference = db.collection("users").doc(firebase.auth().currentUser.uid);
+                    user_reference.update("reviews", firebase.firestore.FieldValue.increment(-1));
+                })
+
+            })
+            edit_counter++;
+            delete_counter--;
         })
     });
+
+
+
 }
 
 
@@ -75,7 +86,29 @@ function submitReviewToDB(name, course, rating, description, poster_id, id) {
     }).then(function() {
         displayProfessorCard(id);
         displayProfessorReviews(id, poster_id);
+
     }).catch(function(error) {
         console.error("Error adding document: ", error);
     });
+}
+
+
+function updateFacultyList() {
+    db.collection('faculty').get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            faculty_list.push(doc.data().name);
+            faculty_map.set(doc.data().name, doc.id);
+        });
+    })
+}
+
+function updateUsersList() {
+    users_map.clear();
+    users_list = [];
+    db.collection('users').get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            users_list.push(doc.data().name);
+            users_map.set(doc.data().name, doc.id);
+        });
+    })
 }

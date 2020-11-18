@@ -25,19 +25,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70653789-6c00-406f-b9b5-1e54103f3f3e" name="Default Changelist" comment="Pushing changes from laptop">
-      <change afterPath="$PROJECT_DIR$/src/events.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/firebase.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/render.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
+    <list default="true" id="70653789-6c00-406f-b9b5-1e54103f3f3e" name="Default Changelist" comment="pushing changes as of 11/15">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/render.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +83,9 @@
       <workItem from="1603212213062" duration="9934000" />
       <workItem from="1604216263667" duration="24140000" />
       <workItem from="1604303714356" duration="21485000" />
+      <workItem from="1605423708657" duration="13636000" />
+      <workItem from="1605569686789" duration="230000" />
+      <workItem from="1605705412940" duration="13002000" />
     </task>
     <task id="LOCAL-00001" summary="commiting">
       <created>1603173835242</created>
@@ -104,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603234632361</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="pushing changes as of 11/15">
+      <created>1605423735989</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605423735989</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,16 +141,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commiting" />
     <MESSAGE value="Pushing changes from laptop" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pushing changes from laptop" />
+    <MESSAGE value="pushing changes as of 11/15" />
+    <option name="LAST_COMMIT_MESSAGE" value="pushing changes as of 11/15" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="979" y="479" key="#Notifications" timestamp="1605706979297">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="979" y="479" key="#Notifications/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1605706979297" />
     <state x="1010" y="446" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604309495024">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="446" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1604309495024" />
-    <state x="337" y="166" key="Vcs.Push.Dialog.v2" timestamp="1603402852989">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state x="599" y="249" key="Vcs.Push.Dialog.v2" timestamp="1605733571277">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="599" y="249" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1605733571277" />
     <state x="337" y="166" key="Vcs.Push.Dialog.v2/0.23.1440.804@0.23.1440.804" timestamp="1603402852989" />
     <state x="385" y="151" width="670" height="676" key="search.everywhere.popup" timestamp="1603321848855">
       <screen x="0" y="23" width="1440" height="804" />
