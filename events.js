@@ -27,7 +27,7 @@ signupButton.addEventListener('click', (event) => {
 
 logout.addEventListener('click', (event) => {
     event.preventDefault();
-    let account_info = modal[2];
+    let account_info = document.querySelector('#account-info');
     if (account_info !== null) {
         account_info.remove();
     }
@@ -54,7 +54,7 @@ loginButton.addEventListener('click', (event) => {
 
 account_button.addEventListener('click', (event) => {
     $(document).ready(function() {
-        let account_info = document.querySelector('.account-info');
+        let account_info = document.querySelector('#account-info');
         if (account_info === null) {
             let uid = firebase.auth().currentUser.uid;
             let userRef = db.collection("users").doc(uid);

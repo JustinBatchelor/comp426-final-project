@@ -134,7 +134,7 @@ function renderReview(review, uid, edit_counter, delete_counter) {
 function renderAccountInfo(doc) {
     let account = modal[2];
     let html = `
-    <div class="jumbotron account-info" style="background: transparent">
+    <div class="jumbotron account-info" id="account-info" style="background: transparent">
         <p>Name: <span>${doc.data().name}</span></p>
         <p>Reviews: <span>${doc.data().reviews}</span></p>
     </div>
