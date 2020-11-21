@@ -28,7 +28,9 @@ signupButton.addEventListener('click', (event) => {
 logout.addEventListener('click', (event) => {
     event.preventDefault();
     let account_info = modal[2];
-    account_info.remove();
+    if (account_info !== null) {
+        account_info.remove();
+    }
     auth.signOut();
 })
 
