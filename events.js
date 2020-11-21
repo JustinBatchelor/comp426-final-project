@@ -32,6 +32,7 @@ logout.addEventListener('click', (event) => {
         account_info.remove();
     }
     auth.signOut();
+    refreshHomePage();
 })
 
 loginButton.addEventListener('click', (event) => {
