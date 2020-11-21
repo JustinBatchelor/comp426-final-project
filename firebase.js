@@ -47,46 +47,48 @@ function displayProfessorCard(prof_uid){
 function displayProfessorReviews(prof_uid, poster_id) {
     let edit_counter = 1;
     let delete_counter = -1;
-    db.collection("faculty").doc(prof_uid).collection("reviews").get().then(reviews => {
+    db.collection("faculty").doc(prof_uid).collection("reviews").get().then(function(reviews) {
         reviews.forEach(review => {
             renderReview(review.data(), poster_id, edit_counter, delete_counter);
             let edit_button = document.querySelector("[id=" + CSS.escape(edit_counter.toString()) +"]");
             let delete_button = document.querySelector("[id=" + CSS.escape(delete_counter.toString()) +"]");
-            edit_button.addEventListener('click', (event) => {
-                event.preventDefault();
-                let document_reference = review.id;
-                let edit_review_html = renderEditReview(review.data());
-                $root.empty();
-                $root.append(edit_review_html);
-                let submit_review_button = document.querySelector('#review-submit');
-                submit_review_button.addEventListener("click", (event) => {
-                    let rating = document.getElementById("inputRating").value;
-                    let edit_review_body = document.getElementById("review-body").value;
-                    db.collection("faculty").doc(prof_uid).collection("reviews").doc(document_reference).update({
-                        rating: rating,
-                        description: edit_review_body
-                    }).then(function() {
+            if (edit_button !== null & delete_button !== null) {
+                edit_button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    let document_reference = review.id;
+                    let edit_review_html = renderEditReview(review.data());
+                    $root.empty();
+                    $root.append(edit_review_html);
+                    let submit_review_button = document.querySelector('#review-submit');
+                    submit_review_button.addEventListener("click", (event) => {
+                        let rating = document.getElementById("inputRating").value;
+                        let edit_review_body = document.getElementById("review-body").value;
+                        db.collection("faculty").doc(prof_uid).collection("reviews").doc(document_reference).update({
+                            rating: rating,
+                            description: edit_review_body
+                        }).then(function () {
+                            displayProfessorCard(prof_uid);
+                            displayProfessorReviews(prof_uid, poster_id);
+                        }).catch(function (error) {
+                            console.log(error);
+                        })
+                    });
+
+                })
+                delete_button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    let document_reference = review.id;
+                    db.collection("faculty").doc(prof_uid).collection("reviews").doc(document_reference).delete().then(function () {
                         displayProfessorCard(prof_uid);
                         displayProfessorReviews(prof_uid, poster_id);
-                    }).catch(function(error) {
-                        console.log(error);
+                        let user_reference = db.collection("users").doc(firebase.auth().currentUser.uid);
+                        user_reference.update("reviews", firebase.firestore.FieldValue.increment(-1));
                     })
-                });
 
-            })
-            delete_button.addEventListener('click', (event) => {
-                event.preventDefault();
-                let document_reference = review.id;
-                db.collection("faculty").doc(prof_uid).collection("reviews").doc(document_reference).delete().then(function(){
-                    displayProfessorCard(prof_uid);
-                    displayProfessorReviews(prof_uid, poster_id);
-                    let user_reference = db.collection("users").doc(firebase.auth().currentUser.uid);
-                    user_reference.update("reviews", firebase.firestore.FieldValue.increment(-1));
                 })
-
-            })
-            edit_counter++;
-            delete_counter--;
+                edit_counter++;
+                delete_counter--;
+            }
         })
     });
 
