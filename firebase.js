@@ -52,7 +52,7 @@ function displayProfessorReviews(prof_uid, poster_id) {
             renderReview(review.data(), poster_id, edit_counter, delete_counter);
             let edit_button = document.querySelector("[id=" + CSS.escape(edit_counter.toString()) +"]");
             let delete_button = document.querySelector("[id=" + CSS.escape(delete_counter.toString()) +"]");
-            if (edit_button !== null & delete_button !== null) {
+            if (edit_button !== null && delete_button !== null) {
                 edit_button.addEventListener('click', (event) => {
                     event.preventDefault();
                     let document_reference = review.id;
