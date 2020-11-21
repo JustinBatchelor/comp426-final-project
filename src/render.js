@@ -28,6 +28,31 @@ function renderNewReview() {
     `
 }
 
+function renderEditReview(review) {
+    return `
+    <div class="jumbotron" style="margin: 5%">
+        <form>
+            <label for="course">Course</label>
+            <input type="text" class="form-control" id="course" placeholder="${review.course}" readonly>  
+            
+            <label for="inputRating">Rating</label>
+            <select id="inputRating" class="form-control">
+                <option selected hidden>${review.rating}</option>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <label for="review-body">Review</label>
+                <textarea class="form-control" id="review-body">${review.description}</textarea>
+            <button type="button" class="btn btn-secondary" id="review-submit">Submit</button>
+        </form>  
+    </div>
+    `
+}
+
 function renderSearchCard() {
     return `
      <div class="card bg-light mb-3" style="margin-top: 50px; width: 50%; padding: 100px; margin-left: 25%; margin-right: 25%">
@@ -47,6 +72,7 @@ function renderSearchCard() {
 
 function renderProfessorCard(prof) {
     let html = `
+    <div class="container">
         <div class="card bg-light" >
             <div class="card-header">${prof.name}</div>
                 <div class="card-body">
@@ -56,6 +82,7 @@ function renderProfessorCard(prof) {
                 </div>
             <button type="button" class="btn btn-danger">Return</button>
         </div>
+    </div>
     `
     let review_header = `
         <div class="jumbotron">
@@ -81,7 +108,7 @@ function renderReview(review, uid, edit_counter, delete_counter) {
                 <p class="card-title">Rating: <span>${review.rating}</span> / 5</p>
                 <p class="card-title">Description: <span>${review.description}</span></p>
             </div>
-            <div class="container button-row"> 
+            <div class="container button-row" id="button_row"> 
                 <button type="button" class="btn btn-secondary edit-button" id="${edit_counter}">Edit</button>
                 <button type="button" class="btn btn-danger delete-button" id="${delete_counter}">Delete</button>
             </div>
@@ -115,8 +142,21 @@ function renderAccountInfo(doc) {
     account.innerHTML += html;
 }
 
-function renderEditBox() {
+function renderEditBox(review) {
     let html = `
-    <div class="">
+    <div class="container" id="edit_review_form">
+        <div class="form-group">
+            <label for="editTextArea"></label>
+            <textarea class="form-control" id="editTextArea" rows="3"><span>${review.description}</span></textarea>
+        </div>
+        <div class="container edit-row"> 
+                <button type="button" class="btn btn-secondary submit-edit" id="submit-edit">Confirm</button>
+                <button type="button" class="btn btn-danger cancel-edit" id="cancel-edit">Cancel</button>
+            </div>
+    </div>
+ 
     `
+    return html;
+
+
 }

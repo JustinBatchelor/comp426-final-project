@@ -54,6 +54,25 @@ function displayProfessorReviews(prof_uid, poster_id) {
             let delete_button = document.querySelector("[id=" + CSS.escape(delete_counter.toString()) +"]");
             edit_button.addEventListener('click', (event) => {
                 event.preventDefault();
+                let document_reference = review.id;
+                let edit_review_html = renderEditReview(review.data());
+                $root.empty();
+                $root.append(edit_review_html);
+                let submit_review_button = document.querySelector('#review-submit');
+                submit_review_button.addEventListener("click", (event) => {
+                    let rating = document.getElementById("inputRating").value;
+                    let edit_review_body = document.getElementById("review-body").value;
+                    db.collection("faculty").doc(prof_uid).collection("reviews").doc(document_reference).update({
+                        rating: rating,
+                        description: edit_review_body
+                    }).then(function() {
+                        displayProfessorCard(prof_uid);
+                        displayProfessorReviews(prof_uid, poster_id);
+                    }).catch(function(error) {
+                        console.log(error);
+                    })
+                });
+
             })
             delete_button.addEventListener('click', (event) => {
                 event.preventDefault();
