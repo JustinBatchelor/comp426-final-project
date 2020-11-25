@@ -24,13 +24,6 @@ let users_map = new Map();
 updateFacultyList();
 updateUsersList();
 
-function getFacultyReference() {
-    return db.collection("faculty").get();
-}
-
-function getUserReference() {
-    return db.collection("users").get();
-}
 
 function displayProfessorCard(prof_uid){
     db.collection("faculty").doc(prof_uid).get().then(professor => {
